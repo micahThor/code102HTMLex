@@ -38,10 +38,6 @@ p {
 article {
     padding: 0px 0px 0px 50px;
 }
-article > figure > img {
-    padding: 0px 0px 0px 50px;
-    display: inline;
-}
 aside {
     float: right;
     padding: 0px 100px 0px 100px;
