@@ -23,6 +23,7 @@
             }
 
             function checkGameScore(score1, score2) {
+                // checks user input against game score and prints results to page
                 if (score1 == 3 && score2 == 1) {
                     scoreGuess.innerHTML = "That's the correct score!  Sounders won!";
                 } else if (score1 != 3 && score2 == 1) {
@@ -33,7 +34,6 @@
                     scoreGuess.innerHTML = "Both of your scores are wrong";
                 }
             }
-        
         </script>
 
     </head>
@@ -51,7 +51,6 @@
                 </ul> 
             </nav>
         </header>
-
         <aside>
                 <h2>Previous Results this Season</h2>
                 <figure>
@@ -63,12 +62,10 @@
                     <b>LAFC</b>:     <input type="text" name="lafc" id="lafcscore" size="4">
                     <input type="submit" value="Submit Scores" onclick="displayGameScore();">
                     
-                    
                     <p>Sounder Score: <span id = "sounderScoreText"></span></p>
                     <p>LAFC Score: <span id = "lafcScoreText"></span></p>
-                    <p>Result of your Guess: <b><span id = "scoreGuess"></span></b></p>
+                    <p>Result of your Guess: <b><span id = "scoreGuess"></span></p>
         </aside>
-
         <h1>The Sounders's Season Ends with a Playoff Run!</h1>
         <article>
                 <h3>Conference final versus Los Angeles FC on Tuesday, Oct 29</h3>
@@ -80,6 +77,11 @@
     </br>
 </br>
         <footer>
+                <p id="localTime"></p>
+                <script>
+                var time = new Date();
+                document.getElementById("localTime").innerHTML = time;
+                </script>
             <p>Email: SoundersMicah@gmail.com <span>&#183;</span> Twitter: #SoundersFanatic <span>&#183;</span> Facebook: SoundersFCFan <span>&#183;</span> &copy; 2019 Micah Fanatics</p>
         </footer>
     </body>
