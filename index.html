@@ -9,6 +9,18 @@
         <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
+        
+        <script>
+            function displayGameScore() {
+                var lafcScore = document.getElementById("lafcscore").value;
+                lafcScoreText.innerHTML= lafcScore;
+
+                var sounderScore = document.getElementById("sounderscore").value;
+                sounderScoreText.innerHTML= sounderScore; 
+            }
+        
+        </script>
+
     </head>
     <body>
         <header>
@@ -31,6 +43,14 @@
                         <img src="images/game1.png" alt="Game 1 Results"/></br>
                         <img src="images/game2.png" alt="Game 2 Results"/>
                 </figure>
+                    <p><b>Guess the game results:</b></p>
+                    <b>SOUNDERS</b>: <input type="text" name="sounder" id="sounderscore" size="4">
+                    <b>LAFC</b>:     <input type="text" name="lafc" id="lafcscore" size="4">
+                    <input type="submit" value="Submit Scores" onclick="displayGameScore();">
+                    
+                    <h2>Your Projected Score</h2>
+                    <p>Sounder Score: <span id = "sounderScoreText"></span></p>
+                    <p>LAFC Score: <span id = "lafcScoreText"></span></p>
         </aside>
         <h1>The Sounders's Season Ends with a Playoff Run!</h1>
         <article>
