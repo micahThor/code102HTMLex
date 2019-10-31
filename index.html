@@ -9,33 +9,8 @@
         <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-        
-        <script>
-            function displayGameScore() {
-                // get LAFC and Sounder score and write user score to page
-                var sounderScore = document.getElementById("sounderscore").value;
-                sounderScoreText.innerHTML= sounderScore; 
-                var lafcScore = document.getElementById("lafcscore").value;
-                lafcScoreText.innerHTML= lafcScore;
 
-                // test scores to see if user entered correct scores
-                checkGameScore(sounderScore, lafcScore);
-            }
-
-            function checkGameScore(score1, score2) {
-                // checks user input against game score and prints results to page
-                if (score1 == 3 && score2 == 1) {
-                    scoreGuess.innerHTML = "That's the correct score!  Sounders won!";
-                } else if (score1 != 3 && score2 == 1) {
-                    scoreGuess.innerHTML = "That's the correct score for LAFC!  But wrong for Sounders...";
-                } else if (score1 == 3 && score2 != 1) {
-                    scoreGuess.innerHTML = "That's the correct score for the Sounders!  But wrong for LAFC...";
-                } else {
-                    scoreGuess.innerHTML = "Both of your scores are wrong";
-                }
-            }
-        </script>
-
+        <script src="js/gamescore.js"></script>
     </head>
     <body>
         <header>
@@ -54,10 +29,10 @@
         <aside>
                 <h2>Previous Results this Season</h2>
                 <figure>
-                        <img src="images/game1.png" alt="Game 1 Results"/></br>
-                        <img src="images/game2.png" alt="Game 2 Results"/>
+                    <img src="images/game1.png" alt="Game 1 Results"/></br>
+                    <img src="images/game2.png" alt="Game 2 Results"/>
                 </figure>
-                    <h2>Guess the outcome of the historical match</h2>
+                    <h2>Guess the outcome of this match</h2>
                     <b>SOUNDERS</b>: <input type="text" name="sounder" id="sounderscore" size="4">
                     <b>LAFC</b>:     <input type="text" name="lafc" id="lafcscore" size="4">
                     <input type="submit" value="Submit Scores" onclick="displayGameScore();">
@@ -74,14 +49,11 @@
                         <img src="images/lafc.jpg" alt="Sounders vs LAFC"/>
                 </figure>
         </article>
-    </br>
-</br>
+        </br>
+        </br>
         <footer>
                 <p id="localTime"></p>
-                <script>
-                var time = new Date();
-                document.getElementById("localTime").innerHTML = time;
-                </script>
+                <script src="js/date.js"></script>
             <p>Email: SoundersMicah@gmail.com <span>&#183;</span> Twitter: #SoundersFanatic <span>&#183;</span> Facebook: SoundersFCFan <span>&#183;</span> &copy; 2019 Micah Fanatics</p>
         </footer>
     </body>

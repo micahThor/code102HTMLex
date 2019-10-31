@@ -33,8 +33,9 @@ h3 {
     font-family: Arial, Helvetica, sans-serif;
     color: #1D252D;
 }
-p {
+p, b {
     font-family: Arial, Helvetica, sans-serif;
+    color: #1D252D;
 }
 article {
     padding: 0px 0px 0px 50px;
@@ -44,6 +45,8 @@ aside {
     padding: 0px 100px 0px 100px;
     }
 footer {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1D252D;
     text-align: center;
 }
 label {
@@ -54,7 +57,6 @@ label {
     width: 400px;
     line-height: 26px;
   }
-  
   input {
     height: 10px;
     flex: 0 0 200px;
