@@ -40,10 +40,10 @@ function validateScores(score1, score2) {
     if (isNaN(score1)) {
         alert("Sounder's score must be a number");
         return false;
-    }
-    if (isNaN(score2)) {
+    } else if (isNaN(score2)) {
         alert("LAFC's score must be a number");
         return false;
+    } else {
+        return true
     }
-    return true
 }
