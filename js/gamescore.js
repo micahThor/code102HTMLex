@@ -21,15 +21,15 @@ function checkGameScore(score1, score2) {
         scoreGuess.innerHTML = "That's the correct score!  Sounders won!";
     } else if (score1 != 3 && score2 == 1) {
         if (score1 > 3) {
-            scoreGuess.innerHTML = "That's the correct score for LAFC!  But the Sounders scored LESS goals.";
+            scoreGuess.innerHTML = "That's correct for LAFC!  But the Sounders scored LESS goals.";
         } else if (score1 < 3) {
-            scoreGuess.innerHTML = "That's the correct score for LAFC!  But the Sounders scored MORE goals.";
+            scoreGuess.innerHTML = "That's correct for LAFC!  But the Sounders scored MORE goals.";
         }
     } else if (score1 == 3 && score2 != 1) {
         if (score2 > 1) {
-            scoreGuess.innerHTML = "That's the correct score for the Sounders!  But LAFC scored LESS goals.";
+            scoreGuess.innerHTML = "That's correct score for the Sounders!  But LAFC scored LESS goals.";
         } else if (score2 < 1) {
-            scoreGuess.innerHTML = "That's the correct score for the Sounders!  But LAFC scored MORE goals.";
+            scoreGuess.innerHTML = "That's correct score for the Sounders!  But LAFC scored MORE goals.";
         }
     } else {
         scoreGuess.innerHTML = "Both of your scores are wrong.";
