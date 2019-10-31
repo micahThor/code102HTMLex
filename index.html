@@ -33,13 +33,14 @@
                     <img src="images/game2.png" alt="Game 2 Results"/>
                 </figure>
                     <h2>Guess the outcome of this match</h2>
-                    <b>SOUNDERS</b>: <input type="text" name="sounder" id="sounderscore" size="4">
-                    <b>LAFC</b>:     <input type="text" name="lafc" id="lafcscore" size="4">
-                    <input type="submit" value="Submit Scores" onclick="displayGameScore();">
+                    <form name ="scoreForm" onsubmit="validateScores()">
+                        <b>SOUNDERS</b>: <input type="text" name="sounder" id="sounderscore" size="4">
+                        <b>LAFC</b>:     <input type="text" name="lafc" id="lafcscore" size="4">
+                        <input type="submit" value="Submit Scores" onclick="displayGameScore();">
                     
-                    <p>Sounder Score: <span id = "sounderScoreText"></span></p>
-                    <p>LAFC Score: <span id = "lafcScoreText"></span></p>
-                    <p>Result of your Guess: <b><span id = "scoreGuess"></span></p>
+                        <p>Sounder Score: <span id = "sounderScoreText"></span></p>
+                        <p>LAFC Score: <span id = "lafcScoreText"></span></p>
+                        <p>Result of your Guess: <b><span id = "scoreGuess"></span></p>
         </aside>
         <h1>The Sounders's Season Ends with a Playoff Run!</h1>
         <article>

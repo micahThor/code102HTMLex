@@ -1,12 +1,18 @@
 function displayGameScore() {
-    // get LAFC and Sounder score and write user score to page
+    // get LAFC and Sounder score
     var sounderScore = document.getElementById("sounderscore").value;
-    sounderScoreText.innerHTML= sounderScore; 
     var lafcScore = document.getElementById("lafcscore").value;
-    lafcScoreText.innerHTML= lafcScore;
 
-    // test scores to see if user entered correct scores
-    checkGameScore(sounderScore, lafcScore);
+    // validate score values
+    if (validateScores(sounderScore, lafcScore)) {
+        
+        // write values to page
+        sounderScoreText.innerHTML= sounderScore; 
+        lafcScoreText.innerHTML= lafcScore;
+
+        // test scores to see if user entered correct scores
+        checkGameScore(sounderScore, lafcScore);
+    }
 }
 
 function checkGameScore(score1, score2) {
@@ -14,10 +20,30 @@ function checkGameScore(score1, score2) {
     if (score1 == 3 && score2 == 1) {
         scoreGuess.innerHTML = "That's the correct score!  Sounders won!";
     } else if (score1 != 3 && score2 == 1) {
-        scoreGuess.innerHTML = "That's the correct score for LAFC!  But wrong for Sounders...";
+        if (score1 > 3) {
+            scoreGuess.innerHTML = "That's the correct score for LAFC!  But the Sounders scored LESS goals.";
+        } else if (score1 < 3) {
+            scoreGuess.innerHTML = "That's the correct score for LAFC!  But the Sounders scored MORE goals.";
+        }
     } else if (score1 == 3 && score2 != 1) {
-        scoreGuess.innerHTML = "That's the correct score for the Sounders!  But wrong for LAFC...";
+        if (score2 > 1) {
+            scoreGuess.innerHTML = "That's the correct score for the Sounders!  But LAFC scored LESS goals.";
+        } else if (score2 < 1) {
+            scoreGuess.innerHTML = "That's the correct score for the Sounders!  But LAFC scored MORE goals.";
+        }
     } else {
-        scoreGuess.innerHTML = "Both of your scores are wrong";
+        scoreGuess.innerHTML = "Both of your scores are wrong.";
     }
+}
+
+function validateScores(score1, score2) {
+    if (isNaN(score1)) {
+        alert("Sounder's score must be a number");
+        return false;
+    }
+    if (isNaN(score2)) {
+        alert("LAFC's score must be a number");
+        return false;
+    }
+    return true
 }
